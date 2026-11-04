@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Formule Colori</title>
+    <link rel="icon" type="image/png" href="img/icona.png">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- SCHERMATA 1: RICERCA -->
+    <div id="screen-search" class="screen active bg-sfondo1">
+        <header>
+            <h1 class="gradient-title">Formule Colori</h1>
+        </header>
+
+        <main class="container">
+            <div class="selector-buttons">
+                <button id="btn-cartone" class="btn-select active" onclick="caricaDataset('cartone')">Cartone</button>
+                <button id="btn-pvc" class="btn-select" onclick="caricaDataset('pvc')">PVC</button>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Cerca un colore..." autocomplete="off">
+                <button type="button" id="btn-search" class="btn-search" onclick="chiudiTastiera()">🔍</button>
+                <ul id="dropdown-results" class="dropdown hidden"></ul>
+            </div>
+        </main>
+
+        <!-- Footer Schermata 1 -->
+        <div class="app-footer">creato da S1LV4N0</div>
+    </div>
+
+    <!-- SCHERMATA 2: DETTAGLIO FORMULA -->
+    <div id="screen-detail" class="screen bg-sfondo2">
+        <main class="container">
+            <!-- Pulsanti di proporzione peso -->
+            <div class="scale-buttons-container">
+                <button type="button" class="btn-scale active" onclick="cambiaScala('originale', this)">Formula</button>
+                <button type="button" class="btn-scale" onclick="cambiaScala(1000, this)">1 KG</button>
+                <button type="button" class="btn-scale" onclick="cambiaScala(2000, this)">2 KG</button>
+                <button type="button" class="btn-scale" onclick="cambiaScala(3000, this)">3 KG</button>
+            </div>
+            <div class="card">
+                <h2 id="color-title">Nome Colore</h2>
+                <table class="formula-table">
+                    <thead>
+                        <tr>
+                            <th>Componente</th>
+                            <th>Quantità</th>
+                        </tr>
+                    </thead>
+                    <tbody id="formula-body">
+                        <!-- Inserito dinamicamente da JS -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td><em><strong>TOTALE</strong></em></td>
+                            <td id="formula-total"><strong>0 gr.</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div> <!-- Fine della card -->
+            <!-- Pulsante Indietro ORA FUORI dalla card, più in basso e centrato -->
+            <div class="back-container">
+                <button class="btn-back" onclick="mostraRicerca()">← Indietro</button>
+            </div>
+        </main>
+
+        <!-- Footer Schermata 2 -->
+        <div class="app-footer">creato da S1LV4N0</div>
+    </div>
+
+    <!-- Inclusione dei tuoi file JavaScript con i nomi corretti -->
+    <script src="FORMULE-CARTONE.js"></script>
+    <script src="FORMULE-PVC.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
